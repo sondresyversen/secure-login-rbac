@@ -1,0 +1,73 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, msg in messages %}
+<p style="color: green; font-weight: bold;">{{ msg }}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<h1>Velkommen, {{ brukernavn }}!</h1>
+<p>Dette er en lukket side som kun innloggede brukere kan se.</p>
+
+<br>
+<a href="{{ url_for('logout') }}">Logg ut</a>
+
+<section class="om_meg_seksjon">
+    <div class="info_boks">
+        <div class="beholder">
+            <i class="fa-solid fa-user"></i>
+            <p>Navn</p>
+            <div class="tekst_boks">
+                <p class="tekst_element">Sondre Syversen</p>
+            </div>
+        </div>
+
+        <div class="beholder">
+            <i class="fa-solid fa-phone"></i>
+            <p>Telefonnummer</p>
+            <div class="tekst_boks">
+                <p class="tekst_element">+47 940 30 350</p>
+            </div>
+        </div>
+
+        <div class="beholder">
+            <i class="fa-solid fa-envelope"></i>
+            <p>Email</p>
+            <div class="tekst_boks">
+                <p class="tekst_element">syversen.sondre@outlook.com</p>
+            </div>
+        </div>
+
+        <div class="beholder">
+            <i class="fa-solid fa-calendar"></i>
+            <p>Fødselsdag</p>
+            <div class="tekst_boks">
+                <p class="tekst_element">16. januar 2009</p>
+            </div>
+        </div>
+
+        <div class="beholder">
+            <i class="fa-solid fa-heart"></i>
+            <p>Interesser</p>
+            <div class="tekst_boks">
+                <p class="tekst_element">Programmering, 3D-printing, Teknologi, Musikk, Piano</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bilde_boks">
+        <img src="/static/selvportrett.JPG" alt="Selvportrett av en gutt med fjell i bakgrunnen av bilde.">
+        <form class="bilde_form" action="">
+            <input type="file" name="bilde" required>
+            <button type="submit"><i class="fa-solid fa-upload"></i> Bytt bilde</button>
+        </form>
+    </div>
+
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrer konto</title>
+    <link rel="stylesheet" href="/static/login.css">
+</head>
+
+<body>
+    <h2>Opprett en ny konto</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, msg in messages %}
+    <p style="color:red; font-weight: bold;">{{ msg }}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith%}
+
+    <form method="POST">
+        <label for="brukernavn">Brukernavn:</label><br>
+        <input type="text" id="brukernavn" name="brukernavn" required><br><br>
+
+        <label for="passord">Passord:</label><br>
+        <input type="password" id="passord" name="passord" required><br><br>
+
+        <button type="submit">Registrer deg</button>
+    </form>
+
+    <p>Har du allerede en konto? <a href="{{ url_for('login') }}">Logg inn her</a></p>
+
+</body>
+
+</html>

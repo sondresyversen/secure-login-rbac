@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="legg_igjen_en_hilsen_seksjon">
+
+    <form id="form" action="/legg_til_kommentar" method="post">
+
+        <h3>Legg igjen en hilsen</h3>
+
+        <textarea name="kommentar" id="kommentar" placeholder="Skriv din hilsen her..." required></textarea>
+
+        <button class="knapp" type="submit">
+            Send hilsen
+        </button>
+
+    </form>
+
+</section>
+
+
+<section class="hilsener_seksjon">
+
+    <h3>Hilsener</h3>
+
+
+    {% for kommentar in kommentar_liste %}
+
+    <div class="kommentar">
+        {{ kommentar[1] }}
+        {% if session["rolle"] == "Admin" %}
+
+        <form class="slett_form" action="/slett/{{ kommentar[0] }}" method="post">
+            <button type="submit" class="slett">
+                <i class="fa-solid fa-x"></i>
+            </button>
+        </form>
+
+        {% endif %}
+
+        <form class="rediger_form" action="/rediger/{{ kommentar[0] }}" method="post">
+            <button class="rediger" type="submit">
+                <i class="fa-solid fa-pen"></i>
+            </button>
+        </form>
+
+        <a href="/reply/{{ kommentar[0] }}">
+
+            <button class="reply" type="button">
+                <i class="fa-solid fa-reply"></i>
+            </button>
+
+        </a>
+
+        <div class="svar_seksjon" style="
+                    margin-left: 40px;
+                    border-left: 2px solid #ccc;
+                    padding-left: 10px;
+                ">
+
+            {% for svar in svar_liste %}
+            {% if svar[1] == kommentar[0] %}
+
+            <div class="svar_kommentar" style="
+                                margin-top: 10px;
+                                background-color: #f9f9f9;
+                                padding: 5px 10px;
+                                border-radius: 4px;
+                            ">
+
+                {{ svar[2] }}
+
+                {% if session["rolle"] == "Admin" %}
+
+                <form class="slett_form" action="/slett_svar/{{ svar[0] }}" method="post">
+                    <button type="submit" class="slett">
+                        <i class="fa-solid fa-x"></i>
+                    </button>
+                </form>
+
+                {% endif %}
+
+            </div>
+
+            {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</section>
+
+
+<script>
+
+    const textarea = document.getElementById('kommentar');
+    const form = document.getElementById('form');
+
+    textarea.addEventListener('keydown', function (e) {
+
+        if (e.key === 'Enter' && !e.shiftKey) {
+
+            e.preventDefault();
+
+            form.submit();
+
+        }
+
+    });
+
+</script>
+
+
+{% endblock %}

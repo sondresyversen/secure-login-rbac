@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Rediger kommentar....</h1>
+<form action="/oppdater/{{kommentar[0]}}" method="post">
+    <input class="input" type="text" value="{{kommentar[1]}}" name="kommentar" autofocus>
+</form>
+{% endblock %}

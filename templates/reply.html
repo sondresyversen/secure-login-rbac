@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Svar på kommentar</h1>
+
+<form action="/reply_save/{{ kommentar[0] }}" method="post">
+    <input class="input" type="text" name="reply" autofocus required>
+    <button type="submit">Svar</button>
+</form>
+
+{% endblock %}
