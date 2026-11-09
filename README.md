@@ -33,7 +33,7 @@ def admin_required(f):
 ### How to Run Locally
 1. Clone this repository to your machine:
    ```bash
-   git clone https://github.com
+   git clone https://github.com/sondresyversen/secure-login-rbac/
    ```
 2. Install the required Python packages:
    ```bash
