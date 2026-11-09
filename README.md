@@ -1,15 +1,16 @@
 # Secure Login & Role-Based Access Control (RBAC) 🔐
 
-A secure backend web application built with Python and the Flask framework. The project implements a robust authentication layer utilizing password hashing via Bcrypt, relational data storage with SQLite3, and custom route decorators to enforce Role-Based Access Control (RBAC).
+This is a backend web application built with Python and Flask. I made this project to learn more about user authentication, how to hash passwords safely, and how to restrict certain actions based on user roles (Admin vs. User).
 
-### Key Features
-- **Secure Authentication:** Implements industry-standard password hashing using `flask-bcrypt` to prevent plain-text storage of credentials.
-- **Role-Based Access Control (RBAC):** Restricts dangerous endpoints (such as deleting content) to authorized accounts using a custom `@admin_required` python decorator.
-- **Relational Databases:** Utilizes multiple isolated SQLite3 database tables to manage users, comments, and replies dynamically.
-- **Session Management:** Handles secure state retention across user interactions using cryptographic cookies (`app.secret_key`).
+### Features
+- **User Registration & Login:** Users can create an account and log in.
+- **Secure Passwords:** Passwords are never stored in plain text. They are securely hashed using `flask-bcrypt`.
+- **Role-Based Access Control (RBAC):** Users get the 'User' role by default. Only users with the 'Admin' role are allowed to delete comments or replies.
+- **Route Protection:** I built a custom Python decorator (`@admin_required`) that works like a doorman to protect admin-only routes.
+- **Databases:** The app automatically creates and manages three separate SQLite3 databases for users, comments, and replies.
 
-### Identity & Access Logic
-The system automatically spins up the environment and seed records on initialization. Dangerous actions leverage a structural decorator architecture:
+### How the Admin Check Works
+Instead of writing the same permission check inside every single route, I created this decorator to handle security automatically:
 
 ```python
 def admin_required(f):
@@ -23,18 +24,18 @@ def admin_required(f):
     return decorated_function
 ```
 
-### Built With
-- **Backend Framework:** Python & Flask
-- **Security & Hashing:** Flask-Bcrypt
-- **Database Engine:** SQLite3
-- **Frontend Layer:** Jinja2 Templating HTML Engine
+### Technologies Used
+- **Backend:** Python & Flask
+- **Security:** Flask-Bcrypt (for password hashing)
+- **Database:** SQLite3
+- **Frontend:** HTML & Jinja2 templates
 
 ### How to Run Locally
-1. Clone the repository:
+1. Clone this repository to your machine:
    ```bash
    git clone https://github.com
    ```
-2. Install the required backend dependencies:
+2. Install the required Python packages:
    ```bash
    pip install Flask flask-bcrypt
    ```
@@ -42,5 +43,6 @@ def admin_required(f):
    ```bash
    python app.py
    ```
-4. Access the local web node at: `http://localhost:5500`
+4. Open your browser and go to: `http://localhost:5500`
+
 
