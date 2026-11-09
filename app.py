@@ -6,7 +6,6 @@ import os
 
 app = Flask(__name__)
 
-# Genererer en sikker, tilfeldig nøkkel i bakgrunnen i stedet for å lagre passordet i klartekst
 app.secret_key = os.urandom(24)
 
 bcrypt = Bcrypt(app)
