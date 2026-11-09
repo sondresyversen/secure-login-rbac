@@ -1,0 +1,519 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "area-normal", sans-serif;
+    font-style: normal;
+}
+
+html {
+    background-color: rgb(251, 252, 254);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    align-content: center;
+    font-weight: 100;
+}
+
+
+.navn_div {
+    background-color: rgb(251, 252, 254);
+    height: 10vh;
+}
+
+.om_meg_seksjon {
+    display: flex;
+    flex-direction: row;
+
+    width: 98vw;
+    height: 60vh;
+
+    margin-left: 1vw;
+
+    border-radius: 20px;
+}
+
+.info_boks {
+    background-color: whitesmoke;
+
+    border-radius: 20px;
+    border: 4px solid rgb(237, 240, 249);
+
+    height: 60vh;
+    width: 60vw;
+
+    margin: 5px;
+}
+
+.bilde_boks {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 5px;
+
+    height: 60vh;
+    width: 35vw;
+
+    border-radius: 20px;
+    border: 4px solid rgb(237, 240, 249);
+
+    background-color: whitesmoke;
+}
+
+.bilde_boks img {
+    height: 50vh;
+    width: auto;
+
+    border-radius: 20px;
+
+    transition: 0.2s ease;
+}
+
+.bilde_boks img:hover {
+    scale: 1.03;
+}
+
+.bilde_boks button {
+    color: rgb(50, 96, 202);
+    background-color: white;
+
+    border: 1px solid rgb(50, 96, 202);
+    border-radius: 10px;
+
+    width: 13vw;
+    height: 50px;
+
+    margin-top: 10px;
+
+    transition: 0.2s ease;
+
+    cursor: pointer;
+}
+
+.bilde_boks button i {
+    transition: 0.2s ease;
+}
+
+.bilde_boks button:hover {
+    background-color: rgb(50, 96, 202);
+    color: white;
+}
+
+.bilde_boks button:hover i {
+    color: white;
+}
+
+.fa-solid {
+    color: rgb(50, 96, 202);
+    font-size: 20px;
+}
+
+
+.beholder {
+    display: flex;
+    flex-direction: row;
+
+    height: 12vh;
+}
+
+.beholder i,
+.beholder p,
+.beholder div {
+    margin-top: 25px;
+    margin-left: 10px;
+}
+
+.beholder i {
+    margin-left: 30px;
+}
+
+.beholder i,
+.beholder p {
+    margin-top: 30px;
+}
+
+.beholder p,
+.tekst_element {
+    font-family: "area-light", sans-serif;
+    font-size: 15px;
+}
+
+.beholder>p {
+    width: 150px;
+}
+
+.tekst_boks {
+    margin-top: 20px;
+
+    border: 0.2px solid black;
+    border-radius: 10px;
+
+    height: 40px;
+    width: 35vw;
+}
+
+.tekst_boks p {
+    margin-top: 10px;
+}
+
+
+.legg_igjen_en_hilsen_seksjon,
+.hilsener_seksjon {
+    margin-top: 5vh;
+    margin-left: 2vw;
+}
+
+.hilsener_seksjon {
+    margin-bottom: 5vh;
+}
+
+
+
+.bilde_form {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    display: block;
+
+    background-color: whitesmoke;
+
+    border: 0.2px solid black;
+    border-radius: 15px;
+
+    width: 96vw;
+    height: 10vh;
+
+    min-width: 96vw;
+    max-width: 96vw;
+
+    min-height: 10vh;
+    max-height: 10vh;
+
+    padding: 15px;
+
+    box-sizing: border-box;
+
+    resize: none;
+}
+
+textarea:focus {
+    outline: 2px solid rgb(50, 96, 202);
+    border-color: rgb(50, 96, 202);
+}
+
+
+.knapp {
+    background-color: rgb(50, 96, 202);
+    color: white;
+
+    border: 1px solid rgb(50, 96, 202);
+    border-radius: 10px;
+
+    width: 13vw;
+    height: 50px;
+
+    margin-top: 10px;
+
+    transition: 0.2s ease;
+
+    cursor: pointer;
+}
+
+.knapp:hover {
+    color: rgb(50, 96, 202);
+    background-color: white;
+}
+
+
+.kommentar {
+    background-color: whitesmoke;
+
+    width: 96vw;
+
+    margin-bottom: 15px;
+    padding: 15px;
+
+    border-radius: 15px;
+
+    display: block;
+
+    min-height: 80px;
+}
+
+
+
+.kommentar_innhold {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+}
+
+.kommentar_tekst {
+    flex: 1;
+
+    font-family: "area-normal", sans-serif;
+
+    overflow-wrap: anywhere;
+}
+
+
+.kommentar_knapper {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin-left: 15px;
+}
+
+
+
+.slett,
+.rediger,
+.reply {
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #e5e5e5;
+
+    transition: 0.2s ease;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.slett {
+    background-color: red;
+    color: white;
+}
+
+.slett i {
+    transition: 1s ease;
+}
+
+.rediger {
+    background-color: rgb(50, 96, 202);
+}
+
+.rediger i{color: white;}
+
+.reply {
+    background-color: rgb(50, 96, 202);
+    color: white;
+}
+
+.reply i{
+    color: white;
+}
+
+.svar_seksjon {
+    width: 100%;
+
+    margin-top: 15px;
+    padding-left: 20px;
+
+    border-left: 3px solid rgb(220, 223, 230);
+
+    box-sizing: border-box;
+}
+
+
+
+.svar_kommentar {
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    min-height: 50px;
+
+    margin-top: 8px;
+    padding: 8px 10px 8px 15px;
+
+    box-sizing: border-box;
+
+    background-color: white;
+
+    border: 1px solid rgb(230, 232, 238);
+
+    border-radius: 10px;
+
+    font-family: "area-light", sans-serif;
+
+    overflow-wrap: anywhere;
+}
+
+
+
+.svar_kommentar>span {
+    flex: 1;
+
+    font-family: "area-light", sans-serif;
+
+    overflow-wrap: anywhere;
+}
+
+
+
+.svar_kommentar .slett {
+    width: 35px;
+    height: 35px;
+
+    min-width: 35px;
+
+    margin-left: 10px;
+
+    border-radius: 8px;
+}
+
+
+.slett .fa-x {
+    color: white;
+}
+
+.nav_knapp {
+    position: relative;
+
+    margin: 5px;
+    left: 60%;
+
+    width: 30vw;
+    height: 50px;
+
+    color: black;
+
+    border: none;
+    border-radius: 15px;
+
+    transition: 0.2s ease;
+
+    cursor: pointer;
+}
+
+.nav_knapp:hover {
+    background-color: grey;
+}
+
+.hjemmeside_navigasjon {
+    display: flex;
+    flex-direction: row;
+}
+
+
+@media screen and (max-width: 1080px) {
+
+
+    .om_meg_seksjon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bilde_boks {
+        width: 96vw;
+        min-width: 96vw;
+        max-width: 96vw;
+    }
+
+    .info_boks {
+        width: 96vw;
+    }
+
+
+
+    .tekst_boks {
+        width: 50vw;
+        height: 50px;
+    }
+
+
+
+    .bilde_boks button {
+        width: 30vw;
+        height: 50px;
+    }
+
+
+
+    .legg_igjen_en_hilsen_seksjon {
+        margin-top: 65vh;
+    }
+
+    .knapp {
+        width: 30vw;
+    }
+
+
+
+    .kommentar {
+        width: 96vw;
+    }
+
+
+
+    .slett,
+    .rediger,
+    .reply {
+        width: 45px;
+        height: 45px;
+    }
+
+
+
+    .svar_seksjon {
+        padding-left: 15px;
+    }
+
+    .svar_kommentar {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .kommentar_innhold {
+        align-items: flex-start;
+    }
+
+    .kommentar_knapper {
+        gap: 3px;
+        margin-left: 8px;
+    }
+
+    .slett,
+    .rediger,
+    .reply {
+        width: 40px;
+        height: 40px;
+    }
+
+    .svar_seksjon {
+        padding-left: 10px;
+    }
+
+}
