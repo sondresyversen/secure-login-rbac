@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/79b9943344.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/hbu2fyr.css">
+    <title>Sondre Syversen || Kontaktside</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="navn_div">
+        <h1>Sondre Syversen</h1>
+    </div>
+
+    <nav class="hjemmeside_navigasjon">
+        <form action="/" method="post">
+            <button class="nav_knapp">🏠 Hjem</button>
+        </form>
+
+        <form action="/kommenter" method="post">
+            <button class="nav_knapp">👋 Hilsen</button>
+        </form>
+
+    </nav>
+    {% block content %}
+
+    {% endblock content %}
+
+</body>
+
+</html>
