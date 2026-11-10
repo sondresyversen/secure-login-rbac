@@ -30,6 +30,13 @@ def admin_required(f):
 - **Database:** SQLite3
 - **Frontend:** HTML & Jinja2 templates
 
+### 🚀 Future Improvements & Scalability
+
+If I were to scale this application further or prepare it for a production environment like Visma's, I would:
+* **Implement Environment Variables:** Move database names and secret keys out of `app.py` and into a `.env` file to separate settings from the source code.
+* **Centralize the Database:** Switch from three separate SQLite instances to a single relational database (like PostgreSQL) with multi-table relations to follow proper database normalization.
+* **Add automated testing:** Write Unit Tests for the `@admin_required` decorator to automatically verify that unauthorized users are always blocked.
+
 ### How to Run Locally
 1. Clone this repository to your machine:
    ```bash
